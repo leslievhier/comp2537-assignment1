@@ -92,7 +92,7 @@ let userCollection;
         await userCollection.insertOne({ name, email, password: hashedPassword });
         req.session.name = name;
         req.session.email = email;
-        res.redirect('/');
+        res.redirect('/members');
     });
 
     app.get('/login', (req, res) => {
@@ -129,7 +129,7 @@ let userCollection;
         }
         req.session.name = user.name;
         req.session.email = user.email;
-        res.redirect('/');
+        res.redirect('/members');
     });
 
     app.get('/members', (req, res) => {
